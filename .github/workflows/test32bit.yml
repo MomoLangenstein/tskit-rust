@@ -39,4 +39,4 @@ jobs:
           rustup target install i686-unknown-linux-gnu
       - name: cargo tests
         run: |
-            cargo hack test --target=i686-unknown-linux-gnu --feature-powerset
+            cargo hack test --target=i686-unknown-linux-gnu --feature-powerset --optional-deps --keep-going
