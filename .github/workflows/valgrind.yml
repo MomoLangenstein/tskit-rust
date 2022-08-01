@@ -28,6 +28,7 @@ jobs:
           toolchain: ${{ matrix.rust }}
           override: true
       - uses: Swatinem/rust-cache@v1
+      - uses: taiki-e/install-action@cargo-hack
       - run: sudo apt-get update -y
         if: matrix.os == 'ubuntu-latest'
       - run: sudo apt-get install -y valgrind
@@ -35,4 +36,4 @@ jobs:
       - run: cargo install cargo-valgrind
       - name: run cargo valgrind
         run: |
-            cargo valgrind test --all-features
+            cargo hack valgrind test --feature-powerset --keep-going

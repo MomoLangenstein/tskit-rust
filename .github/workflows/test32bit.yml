@@ -75,4 +75,4 @@ jobs:
         uses: actions-rs/cargo@v1
         with:
           command: hack
-          args: miri test --target=i686-unknown-linux-gnu --feature-powerset
+          args: miri test --target=i686-unknown-linux-gnu --feature-powerset --keep-going
